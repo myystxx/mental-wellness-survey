@@ -1,6 +1,8 @@
 import React from 'react';
 import './Main.css';
 import Question from './Question';
+import Result from './Result';
+
 
 class Main extends React.Component {
 
@@ -62,8 +64,8 @@ class Main extends React.Component {
             <button className='btn btn-muted' onClick={this.incrementQn}>Start Survey</button>
             </div>
         } else {
-             return <div>
-                <Question qnNo={this.state.qnNo} addChoices={this.addChoices} qn={this.questions[this.state.qnNo]} />
+             return <div style={{marginTop: "10%"}}>
+                <Question qnNo={this.state.qnNo} addChoices={this.addChoices} qn={this.questions[this.state.qnNo]} result={this.state.choices} />
             </div>
         }
     }
