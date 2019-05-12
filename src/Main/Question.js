@@ -2,6 +2,23 @@ import React from 'react';
 import Result from './Result';
 
 class Question extends React.Component {
+
+    state = {choice: null}
+
+    onHover = (choice) => {
+        switch(choice){
+            case 0: 
+                return <div>Not applicable</div>
+            case 1: 
+                return <div>Applied to me to <i>some degree</i>, or <i>some of the time</i></div>
+            case 2:
+                return <div>Applied to me to a <i>considerable degree</i>, or a <i>good part of the time</i></div>
+            case 3: 
+                return <div>Applied to me <i>very much</i>, or <i>most of the time</i></div>
+            default:
+                return <></>
+        } 
+    }
     
     render () {
         while ((this.props.qnNo+1) < 20) {
@@ -11,24 +28,23 @@ class Question extends React.Component {
             return <div className='container'>
             <br/>
             <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" style={{width: "" + completion + "%"}}> </div>
+                <div class="progress-bar bg-bar" role="progressbar" style={{width: "" + completion + "%"}}> </div>
             </div>
-                <div style={{minHeight: "25vh"}}>
+            <br/>
+                <div class="alert alert-warning alert-dismissible fade show center-div" style={{minHeight: "25vh"}}>
                 <br/>
-                <h5>{this.props.qn}</h5><br/>
-                </div>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <p>0: Not applicable</p>
-                    <p>1: Applied to me to <i>some degree</i>, or <i>some of the time</i></p>
-                    <p>2: Applied to me to a <i>considerable degree</i>, or a <i>good part of the time</i></p>
-                    <p>3: Applied to me <i>very much</i>, or <i>most of the time</i></p>
+                <h3>{this.props.qn}</h3><br/>
                 </div>
                 <div className="btn-group" role="group" aria-label="Basic example">
-                    <button onClick={()=>this.props.addChoices(0)} type="button" class="btn btn-info">0</button>
-                    <button onClick={()=>this.props.addChoices(1)} type="button" class="btn btn-info">1</button>
-                    <button onClick={()=>this.props.addChoices(2)} type="button" class="btn btn-info">2</button>
-                    <button onClick={()=>this.props.addChoices(3)} type="button" class="btn btn-info">3</button> 
+                    <button onMouseOver={()=>this.setState({choice: 0})} onMouseOut={()=>this.setState({choice:null})} onClick={()=>this.props.addChoices(0)} type="button" class="btn btn-option btn-light">0</button>
+                    <button onMouseOver={()=>this.setState({choice: 1})} onMouseOut={()=>this.setState({choice:null})} onClick={()=>this.props.addChoices(1)} type="button" class="btn btn-option btn-light">1</button>
+                    <button onMouseOver={()=>this.setState({choice: 2})} onMouseOut={()=>this.setState({choice:null})} onClick={()=>this.props.addChoices(2)} type="button" class="btn btn-option btn-light">2</button>
+                    <button onMouseOver={()=>this.setState({choice: 3})} onMouseOut={()=>this.setState({choice:null})} onClick={()=>this.props.addChoices(3)} type="button" class="btn btn-option btn-light">3</button> 
                 </div>
+                <br/><br/><br/>
+                {this.onHover(this.state.choice)}
+                <br/> <br/> 
+                <br/> 
             </div>
         }
         return <div>

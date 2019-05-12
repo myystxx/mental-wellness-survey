@@ -1,15 +1,48 @@
 body {
-    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-align: center;
-    color: black;
+    color: white;
+}
+
+.alert-light {
+    color: #2d3436;
+}
+
+.btn-start {
+    background: #81ecec;
+    color: rgb(41, 37, 37);
+}
+
+.small {
+    font-size: 15px;
+    color: rgb(90, 90, 90);
 }
 
 .intro {
-    background-color: #e49f8c;
     padding: 100px;
 }
 .result {
-    background-color: #db77ce;
+    background-color: white;
     margin-left: 100px;
     margin-right: 100px;
+    color: #2d3436;
+}
+
+.progress {
+    background: #81ecec;
+}
+.bg-bar {
+    background-color: #ecf0f1;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+  }
+
+.btn-option{
+    min-width: 100px;
 }

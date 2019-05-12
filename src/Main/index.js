@@ -51,17 +51,18 @@ class Main extends React.Component {
 
     render () {
         if (this.state.qnNo === -1) {
-            return <div className='container'>
-            <div className='intro'>
-                <h2 class="fas fa-heartbeat"> Check your wellness today!</h2>
-                <h2 class="fas fa-heartbeat"> </h2><br/>
-                <p><i>keep track of your mental wellness,
-                <br/>take the survey to find out!
-                <br/>Answer the questions truthfully
-                <i class="far fa-smile-wink"></i></i></p>
-            </div>
-            <br></br>
-            <button className='btn btn-muted' onClick={this.incrementQn}>Start Survey</button>
+            return <div className='container' style={{marginTop: "10%"}}>
+                <div class="alert alert-light alert-dismissible fade show center-div" style={{minHeight: "25vh"}}>
+                    <div className='intro'>
+                        <h2 class="fas fa-heartbeat"> Check your wellness today!</h2>
+                        <h2 class="fas fa-heartbeat"> </h2><br/>
+                        <p className="small lead">Keep track of your mental wellness,
+                        <br/>take the survey to find out!
+                        <br/>Answer the questions truthfully
+                        <i class="far fa-smile-wink"></i></p>
+                        <button className='btn btn-start' onClick={this.incrementQn}>Start Survey</button>
+                    </div>
+                </div>
             </div>
         } else {
              return <div style={{marginTop: "10%"}}>

@@ -2,10 +2,6 @@ import React from 'react';
 
 function Result(props) {
 
-    // let results = props.result.map(result => {
-    //     return <div key={result}>{result}</div>
-    // });
-
     const depressCompare = (score) => {
         if (score>0 && score<=5) {
             return <b>Normal</b>
@@ -81,10 +77,56 @@ function Result(props) {
     }
 
     return <div className='result'>
-        <h2>Your result<i class="far fa-smile-wink"></i></h2>
+        <br/>
+        <h2>Your result <i class="far fa-smile-wink"></i></h2>
         <p>Depression: {depression()} ({depressCompare(depression())})</p>
         <p>Stress: {stress()} ({stressCompare(stress())})</p>
         <p>Anxiety: {anxiety()} ({anxietyCompare(anxiety())})</p>
+        <br/>
+        <div style={{overflowX: "auto"}}>
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Level</th>
+      <th scope="col">Depression</th>
+      <th scope="col">Anxiety</th>
+      <th scope="col">Stress</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Normal</th>
+      <td>0-5</td>
+      <td>0-4</td>
+      <td>0-7</td>
+    </tr>
+    <tr>
+      <th scope="row">Mild</th>
+      <td>6-7</td>
+      <td>5-6</td>
+      <td>8-9</td>
+    </tr>
+    <tr>
+      <th scope="row">Moderate</th>
+      <td>8-10</td>
+      <td>7-8</td>
+      <td>10-13</td>
+    </tr>
+    <tr>
+      <th scope="row">Severe</th>
+      <td>11-14</td>
+      <td>9-10</td>
+      <td>14-17</td>
+    </tr>
+    <tr>
+      <th scope="row">Extremely Severe</th>
+      <td>15 +</td>
+      <td>11 +</td>
+      <td>18 +</td>
+    </tr>
+  </tbody>
+</table>
+</div>
     </div>
 }
 
