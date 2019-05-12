@@ -49,7 +49,7 @@ function Result(props) {
         let depressScore = [true, true, false, true, false, true, true, true, true, false, true, true, false, true, true, false, false, true, true, true, false]
         let score = 0;
         for (let i=0; i<depressScore.length; i++) {
-            if (depressScore[i] && props.result[i]) {
+            if (!depressScore[i] && props.result[i]) {
                 score = score + props.result[i]
             }
         }
@@ -59,7 +59,7 @@ function Result(props) {
         let stressScore = [false, true, true, true, true, false, true, false, true, true, false, false, true, false, true, true, true, false, true, true, true]
         let score = 0;
         for (let i=0; i<stressScore.length; i++) {
-            if (stressScore[i] && props.result[i]) {
+            if (!stressScore[i] && props.result[i]) {
                 score = score + props.result[i]
             }
         }
@@ -69,7 +69,7 @@ function Result(props) {
         let anxietyScore = [true, false, true, false, true, true, false, true, false, true, true, true, true, true, false, true, true, true, false, false, true]
         let score = 0;
         for (let i=0; i<anxietyScore.length; i++) {
-            if (anxietyScore[i] && props.result[i]) {
+            if (!anxietyScore[i] && props.result[i]) {
                 score = score + props.result[i]
             }
         }
