@@ -16,7 +16,7 @@ class Question extends React.Component {
         if (!this.props.malay){
             switch(choice){
                 case 0: 
-                    return <div>Not applicable<br/></div>
+                    return <div>Not applicable<br/><br/></div>
                 case 1: 
                     return <div>Applied to me to <i>some degree</i>, or <i>some of the time</i><br/><br/></div>
                 case 2:
