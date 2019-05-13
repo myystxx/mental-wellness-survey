@@ -16,26 +16,26 @@ class Question extends React.Component {
         if (!this.props.malay){
             switch(choice){
                 case 0: 
-                    return <div>Not applicable</div>
+                    return <div>Not applicable<br/></div>
                 case 1: 
-                    return <div>Applied to me to <i>some degree</i>, or <i>some of the time</i></div>
+                    return <div>Applied to me to <i>some degree</i>, or <i>some of the time</i><br/></div>
                 case 2:
-                    return <div>Applied to me to a <i>considerable degree</i>, or a <i>good part of the time</i></div>
+                    return <div>Applied to me to a <i>considerable degree</i>, or a <i>good part of the time</i><br/></div>
                 case 3: 
-                    return <div>Applied to me <i>very much</i>, or <i>most of the time</i></div>
+                    return <div>Applied to me <i>very much</i>, or <i>most of the time</i><br/></div>
                 default:
                     return <></>
             } 
         } else {
             switch(choice){
                 case 0: 
-                    return <div><i>Tidak langsung</i> menggambarkan keadaan saya</div>
+                    return <div><i>Tidak langsung</i> menggambarkan keadaan saya<br/></div>
                 case 1: 
-                    return <div><i>Sedikit atau jarang-jarang</i> menggambarkan keadaan saya</div>
+                    return <div><i>Sedikit atau jarang-jarang</i> menggambarkan keadaan saya<br/></div>
                 case 2:
-                    return <div><i>Banyak</i> atau <i>kerapkali</i> menggambarkan keaadan saya</div>
+                    return <div><i>Banyak</i> atau <i>kerapkali</i> menggambarkan keaadan saya<br/></div>
                 case 3: 
-                    return <div><i>Sangat banya</i> atau <i>sangat kerap</i> menggambarkan keadaan saya</div>
+                    return <div><i>Sangat banya</i> atau <i>sangat kerap</i> menggambarkan keadaan saya<br/></div>
                 default:
                     return <></>
             } 
