@@ -30,14 +30,43 @@ class Main extends React.Component {
         'I felt that life was meaningless'
     ];
 
+    malay_questions = [
+        'Saya dapati diri saya sukar ditenteramkan',
+        'Saya sedar mulut saya terasa kering',
+        'Saya tidak dapat mengalami perasaan positif sama sekali',
+        'Saya mengalami kesukaran bernafas (contohnya pernafasan yang laju, tercungap-cungap walaupun tidak melakukan senaman fizikal)',
+        'Saya sukar untuk mendapatkan semangat bagi melakukan sesuatu perkara',
+        'Saya cenderung untuk bertindak keterlaluan dalam sesuatu keadaan',
+        'Saya rasa menggeletar (contohnya pada tangan)',
+        'Saya rasa saya menggunakan banyak tenaga dalam keadaan cemas',
+        'Saya bimbang keadaan dimana saya mungkin menjadi panik dan melakukan perkara yang membodohkan diri sendiri',
+        'Saya rasa saya tidak mempunyai apa-apa untuk diharapkan',
+        'Saya dapati diri saya semakin gelisah',
+        'Saya rasa sukar untuk relaks',
+        'Saya rasa sedih dan murung',
+        'Saya tidak dapat menahan sabar dengan perkara yang menghalang saya meneruskan apa yang saya lakukan',
+        'Saya rasa hampir-hampir panik/cemas',
+        'Saya tidak bersemangat dengan apa jua saya lakukan',
+        'Saya rasa tidak begitu berharga sebagai seorang individu',
+        'Saya rasa saya mudah tersentuh (contohnya lebih sensitive)',
+        'Saya sedar tindakbalas jantung saya walaupun tidak melakukan aktiviti fizikal (contohnya kadar denyuta',
+        'Saya berasa takut tanpa sebab yang munasabah',
+        'Saya rasa hidup ini tidak bermakna'
+    ]
+
     
     state = {
         choices: [],
-        qnNo: -1
+        qnNo: -1,
+        malay: false
     }
 
-    incrementQn = () => {
+    incrementQn = (malay) => {
         this.setState({qnNo: this.state.qnNo+1})
+    }
+    
+    setMalay = () => {
+        this.setState({qnNo: this.state.qnNo+1, malay: true})
     }
 
     addChoices = (newChoice) => {
@@ -49,24 +78,34 @@ class Main extends React.Component {
         })
     }
 
+    toggleLanguage =() => {
+        if (this.state.malay){
+            this.setState({malay: false})
+        } else {
+            this.setState({malay: true})
+        }
+    }
+
     render () {
         if (this.state.qnNo === -1) {
             return <div className='container' style={{marginTop: "10%"}}>
-                <div class="alert alert-light alert-dismissible fade show center-div" style={{minHeight: "25vh"}}>
-                    <div className='intro'>
-                        <h2 class="fas fa-heartbeat"> Check your wellness today!</h2>
-                        <h2 class="fas fa-heartbeat"> </h2><br/>
+                <div class="alert alert-light" style={{minHeight: "25vh"}}>
+                    <div className=''>
+                        <h1>❤️</h1>
+                        <h5> Check your wellness today!</h5> 
                         <p className="small lead">Keep track of your mental wellness,
                         <br/>take the survey to find out!
-                        <br/>Answer the questions truthfully
+                        <br/>Answer the questions truthfully &nbsp;
                         <i class="far fa-smile-wink"></i></p>
-                        <button className='btn btn-start' onClick={this.incrementQn}>Start Survey</button>
+                        <button className='btn btn-block btn-start' onClick={this.incrementQn}>English</button>
+                        <button className='btn btn-block btn-start' onClick={()=> this.setMalay()}>Malay</button>
+                        <small className="grey"> Select Language To Start Survey </small><br/>
                     </div>
                 </div>
             </div>
         } else {
              return <div style={{marginTop: "10%"}}>
-                <Question qnNo={this.state.qnNo} addChoices={this.addChoices} qn={this.questions[this.state.qnNo]} result={this.state.choices} />
+                <Question toggleLanguage={this.toggleLanguage} malay={this.state.malay} qnNo={this.state.qnNo} addChoices={this.addChoices} qn={this.questions[this.state.qnNo]} malay_qn={this.malay_questions[this.state.qnNo]} result={this.state.choices} />
             </div>
         }
     }
