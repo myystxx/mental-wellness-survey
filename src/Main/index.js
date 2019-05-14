@@ -88,7 +88,7 @@ class Main extends React.Component {
 
     render () {
         if (this.state.qnNo === -1) {
-            return <div className='container' style={{marginTop: "10%"}}>
+            return <div className='container' style={{marginTop: "5vh"}}>
                 <div class="alert alert-light" style={{minHeight: "25vh"}}>
                     <div className=''>
                         <img src="/logo.png" className="img-fluid" style={{maxHeight: "100px"}}/> 
@@ -105,7 +105,7 @@ class Main extends React.Component {
                 </div>
             </div>
         } else {
-             return <div style={{marginTop: "10%"}}>
+             return <div style={{marginTop: "5vh"}}>
                 <Question toggleLanguage={this.toggleLanguage} malay={this.state.malay} qnNo={this.state.qnNo} addChoices={this.addChoices} qn={this.questions[this.state.qnNo]} malay_qn={this.malay_questions[this.state.qnNo]} result={this.state.choices} />
             </div>
         }
