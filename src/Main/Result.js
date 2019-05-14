@@ -255,7 +255,7 @@ class Result extends React.Component {
     </div>
     <button className="btn btn-info btn-md" onClick={this.sendResult}> Email Me My Result </button>
     <br/> <br/>
-    <a className="btn btn-sm btn-light" href="mailto: hello@thoughtfull.world">Any Questions? Feel free to drop us an email!</a><br/><br/>
+    <a className="btn btn-sm btn-light" href="mailto: hello@thoughtfull.world">Any questions? Feel free to drop us an email!</a><br/><br/>
     </div>
     }
 
