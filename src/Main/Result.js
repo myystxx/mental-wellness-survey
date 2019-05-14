@@ -206,7 +206,7 @@ class Result extends React.Component {
   </tbody>
 </table>
 </div>
-<br/> <br/>
+<br/>
     <div class="form-group" align="center">
     <input value={this.state.email} onChange={(e)=>this.setState({email: e.target.value})} style={{maxWidth: "50%"}}type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
     </div>
@@ -266,7 +266,7 @@ class Result extends React.Component {
   </tbody>
 </table>
 </div>
-    <br/> <br/>
+    <br/> 
     <div class="form-group" align="center">
     <input value={this.state.email} onChange={(e)=>this.setState({email: e.target.value})} style={{maxWidth: "50%"}}type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
     </div>
