@@ -7,16 +7,18 @@ class Result extends React.Component {
 
     sendResult = () => {
         // axios.get('/',)
-        this.setState({sent: true})
-        axios.get('https://joni-author-api.herokuapp.com/thoughtfull', {
-            // axios.get('http://localhost:3001/thoughtfull', {
-                params: {
-                    depressScore: this.depression(),
-                    stressScore: this.stress(),
-                    anxietyScore: this.anxiety(),
-                    email: this.state.email
-                }
-        }) 
+        if (this.state.email!==""){
+            this.setState({sent: true})
+            axios.get('https://joni-author-api.herokuapp.com/thoughtfull', {
+                // axios.get('http://localhost:3001/thoughtfull', {
+                    params: {
+                        depressScore: this.depression(),
+                        stressScore: this.stress(),
+                        anxietyScore: this.anxiety(),
+                        email: this.state.email
+                    }
+            }) 
+        }
     }
 
     depressCompare = (score) => {
@@ -178,14 +180,16 @@ class Result extends React.Component {
     }
 
     sendMessage = () => {
-        this.setState({msg_sent: true})
-        axios.get('https://joni-author-api.herokuapp.com/thoughtfull-msg', {
-            // axios.get('http://localhost:3001/thoughtfull', {
-                params: {
-                    text: this.state.text,
-                    email: this.state.email
-                }
-        }) 
+        if (this.state.text !== "" && this.state.email !== "") {
+            this.setState({msg_sent: true})
+            // axios.get('https://joni-author-api.herokuapp.com/thoughtfull-msg', {
+                axios.get('http://localhost:3001/thoughtfull-msg', {
+                    params: {
+                        text: this.state.text,
+                        email: this.state.email
+                    }
+            }) 
+        }
     } 
 
     render() {
