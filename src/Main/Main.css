@@ -1,7 +1,5 @@
 body {
-    background: #11998e;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #29ab87;  /* fallback for old browsers */
     text-align: center;
     color: white;
 }
@@ -11,8 +9,16 @@ body {
 }
 
 .btn-start {
-    background: #81ecec;
-    color: rgb(41, 37, 37);
+    background: #084c7a;
+    color: white;
+}
+
+.green {
+    color: #29ab87 !important;  /* fallback for old browsers */
+}
+
+.btn-info {
+    background:#084c7a !important;
 }
 
 .small {
@@ -31,10 +37,10 @@ body {
 }
 
 .progress {
-    background: #81ecec;
+    background-color: #ecf0f1;
 }
 .bg-bar {
-    background-color: #ecf0f1;
+    background: #084c7a;
 }
 
 .center-div {

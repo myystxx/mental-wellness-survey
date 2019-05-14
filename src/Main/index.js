@@ -91,14 +91,16 @@ class Main extends React.Component {
             return <div className='container' style={{marginTop: "10%"}}>
                 <div class="alert alert-light" style={{minHeight: "25vh"}}>
                     <div className=''>
-                        <h1>❤️</h1>
-                       
-                        <h5> Check your wellness today!</h5> 
-                        <p className="small lead"> Ever wondered how stressed you actually are and how it is affecting you? Take this quick assessment to find out! &nbsp;
-                        <i class="far fa-smile-wink"></i></p>
+                        <img src="https://thoughtfull.world/wp-content/uploads/2018/09/logo_128.png" className="img-fluid" style={{maxHeight: "50px"}}/> <br/><br/>
+                        <h5><strong>Ever wondered how stressed you actually are and how it is affecting you?</strong></h5><hr/>
+                        <p className="small lead green">  <strong>Take this quick assessment to find out! </strong>
+                        </p>
+                        
+                        <p className="small lead"> Answer each question authentically and we’ll quantify it for you! 
+                        </p>
                         <button className='btn btn-block btn-start' onClick={this.incrementQn}>English</button>
                         <button className='btn btn-block btn-start' onClick={()=> this.setMalay()}>Malay</button>
-                        <small className="grey"> Select Language To Start Survey </small><br/>
+                        <small className="grey"> Select language to start assessment </small><br/>
                     </div>
                 </div>
             </div>
