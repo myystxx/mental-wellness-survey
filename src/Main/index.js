@@ -49,7 +49,7 @@ class Main extends React.Component {
         'Saya tidak bersemangat dengan apa jua saya lakukan',
         'Saya rasa tidak begitu berharga sebagai seorang individu',
         'Saya rasa saya mudah tersentuh (contohnya lebih sensitif)',
-        'Saya sedar tindakbalas jantung saya walaupun tidak melakukan aktiviti fizikal (contohnya kadar denyuta',
+        'Saya sedar tindakbalas jantung saya walaupun tidak melakukan aktiviti fizikal (contohnya kadar denyutan jantung bertambah atau denyutan jantung berkurangan)',
         'Saya berasa takut tanpa sebab yang munasabah',
         'Saya rasa hidup ini tidak bermakna'
     ]
