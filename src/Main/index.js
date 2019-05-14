@@ -91,7 +91,7 @@ class Main extends React.Component {
             return <div className='container' style={{marginTop: "10%"}}>
                 <div class="alert alert-light" style={{minHeight: "25vh"}}>
                     <div className=''>
-                        <img src="https://thoughtfull.world/wp-content/uploads/2018/09/logo_128.png" className="img-fluid" style={{maxHeight: "50px"}}/> <br/><br/>
+                        <img src="/logo.png" className="img-fluid" style={{maxHeight: "100px"}}/> 
                         <h5><strong>Ever wondered how stressed you actually are and how it is affecting you?</strong></h5><hr/>
                         <p className="small lead green">  <strong>Take this quick assessment to find out! </strong>
                         </p>
