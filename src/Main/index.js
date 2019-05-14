@@ -92,10 +92,9 @@ class Main extends React.Component {
                 <div class="alert alert-light" style={{minHeight: "25vh"}}>
                     <div className=''>
                         <h1>❤️</h1>
+                       
                         <h5> Check your wellness today!</h5> 
-                        <p className="small lead">Keep track of your mental wellness,
-                        <br/>take the survey to find out!
-                        <br/>Answer the questions truthfully &nbsp;
+                        <p className="small lead"> Ever wondered how stressed you actually are and how it is affecting you? Take this quick assessment to find out! &nbsp;
                         <i class="far fa-smile-wink"></i></p>
                         <button className='btn btn-block btn-start' onClick={this.incrementQn}>English</button>
                         <button className='btn btn-block btn-start' onClick={()=> this.setMalay()}>Malay</button>
