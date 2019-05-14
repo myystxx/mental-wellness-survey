@@ -3,10 +3,11 @@ const axios = require('axios')
 
 class Result extends React.Component {
 
-    state = {email: ""} 
+    state = {email: "", sent: false} 
 
     sendResult = () => {
         // axios.get('/',)
+        this.setState({sent: true})
         axios.get('https://joni-author-api.herokuapp.com/thoughtfull', {
             // axios.get('http://localhost:3001/thoughtfull', {
                 params: {
@@ -135,6 +136,22 @@ class Result extends React.Component {
         return score;
     }
 
+    renderButtonMalay = () => {
+        if (this.state.sent){
+            return  <button className="btn btn-info btn-md" > Sent! </button>
+        } else {
+            return  <button className="btn btn-info btn-md" onClick={this.sendResult}>  E-mel saya hasil saya </button>
+        }
+    }
+
+    renderButtonEnglish = () => {
+        if (this.state.sent){
+            return  <button className="btn btn-info btn-md" > Sent! </button>
+        } else {
+            return  <button className="btn btn-info btn-md" onClick={this.sendResult}> Email Me My Result </button>
+        }
+    }
+
     render() {
 
     if (this.props.malay) {
@@ -193,7 +210,7 @@ class Result extends React.Component {
     <div class="form-group" align="center">
     <input value={this.state.email} onChange={(e)=>this.setState({email: e.target.value})} style={{maxWidth: "50%"}}type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
     </div>
-    <button className="btn btn-info btn-md" onClick={this.sendResult}> E-mel saya hasil saya </button>
+    {this.renderButtonMalay()}
     <br/> <br/>
     <a className="btn btn-sm btn-light" href="mailto: hello@thoughtfull.world">Apa-apa soalan? Jangan ragu untuk menjatuhkan kami e-mel!</a><br/><br/>
     </div>
@@ -253,7 +270,7 @@ class Result extends React.Component {
     <div class="form-group" align="center">
     <input value={this.state.email} onChange={(e)=>this.setState({email: e.target.value})} style={{maxWidth: "50%"}}type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
     </div>
-    <button className="btn btn-info btn-md" onClick={this.sendResult}> Email Me My Result </button>
+    {this.renderButtonEnglish()}
     <br/> <br/>
     <a className="btn btn-sm btn-light" href="mailto: hello@thoughtfull.world">Any questions? Feel free to drop us an email!</a><br/><br/>
     </div>
