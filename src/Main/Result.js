@@ -3,7 +3,7 @@ const axios = require('axios')
 
 class Result extends React.Component {
 
-    state = {email: "", sent: false} 
+    state = {email: "", text: "", message: false, msg_sent: false, sent: false} 
 
     sendResult = () => {
         // axios.get('/',)
@@ -152,6 +152,42 @@ class Result extends React.Component {
         }
     }
 
+    reqMsg = () => {
+        this.setState({message: true})
+    }
+
+    renderField = () => {
+        if (this.state.message) {
+            return <div class="form-group" align="center">
+            <input value={this.state.email} onChange={(e)=>this.setState({email: e.target.value})} style={{maxWidth: "1000px", minWidth: "150px"}} type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" /><br/>
+            <textarea value={this.state.text} onChange={(e)=>this.setState({text: e.target.value})} style={{maxWidth: "1000px", minWidth: "150px"}} class="form-control" id="exampleFormControlInput1" />
+            <br/>
+            {this.renderFieldButton()}
+            </div>
+        } else {
+            return <></>
+        }
+    }
+
+    renderFieldButton = () => {
+        if (this.state.msg_sent){
+            return  <button className="btn btn-info btn-md" > Sent! </button>
+        } else {
+            return  <button className="btn btn-info btn-md" onClick={this.sendMessage}> Send Message </button>
+        }
+    }
+
+    sendMessage = () => {
+        this.setState({msg_sent: true})
+        axios.get('https://joni-author-api.herokuapp.com/thoughtfull-msg', {
+            // axios.get('http://localhost:3001/thoughtfull', {
+                params: {
+                    text: this.state.text,
+                    email: this.state.email
+                }
+        }) 
+    } 
+
     render() {
 
     if (this.props.malay) {
@@ -212,7 +248,8 @@ class Result extends React.Component {
     </div>
     {this.renderButtonMalay()}
     <br/> <br/>
-    <a className="btn btn-sm btn-light" href="mailto: hello@thoughtfull.world">Apa-apa soalan? Jangan ragu untuk menjatuhkan kami e-mel!</a><br/><br/>
+    <span className="btn btn-sm btn-light" onClick={this.reqMsg}>Apa-apa soalan? Jangan ragu untuk menjatuhkan kami mesej!</span><br/><br/>
+    {this.renderField()} <br/><br/>
     </div>
     } else {
         return <div className='result'>
@@ -272,7 +309,8 @@ class Result extends React.Component {
     </div>
     {this.renderButtonEnglish()}
     <br/> <br/>
-    <a className="btn btn-sm btn-light" href="mailto: hello@thoughtfull.world">Any questions? Feel free to drop us an email!</a><br/><br/>
+    <span className="btn btn-sm btn-light" onClick={this.reqMsg}>Any questions? Feel free to drop us a message!</span><br/><br/>
+    {this.renderField()} <br/><br/>
     </div>
     }
 
