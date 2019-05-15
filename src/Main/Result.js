@@ -199,8 +199,8 @@ class Result extends React.Component {
         <br/>
         <h2>Keputusan anda <i class="far fa-smile-wink"></i></h2>
         <p>Kemurungan: {this.depression()} ({this.depressCompare(this.depression())})</p>
-        <p>Stres: {this.stress()} ({this.stressCompare(this.stress())})</p>
         <p>Anzieti: {this.anxiety()} ({this.anxietyCompare(this.anxiety())})</p>
+        <p>Stres: {this.stress()} ({this.stressCompare(this.stress())})</p>
         <br/>
         <div style={{overflowX: "auto"}}>
         <table class="table table-striped">
@@ -260,8 +260,8 @@ class Result extends React.Component {
         <br/>
         <h2>Your result <i class="far fa-smile-wink"></i></h2>
         <p>Depression: {this.depression()} ({this.depressCompare(this.depression())})</p>
-        <p>Stress: {this.stress()} ({this.stressCompare(this.stress())})</p>
         <p>Anxiety: {this.anxiety()} ({this.anxietyCompare(this.anxiety())})</p>
+        <p>Stress: {this.stress()} ({this.stressCompare(this.stress())})</p>
         <br/>
         <div style={{overflowX: "auto"}}>
         <table class="table table-striped">
