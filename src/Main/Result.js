@@ -49,7 +49,7 @@ class Result extends React.Component {
         }
     }
 
-    stressCompare = (score) => {
+    anxietyCompare = (score) => {
         if (this.props.malay){
             if (score>0 && score<=4) {
                 return <b>Normal</b>
@@ -77,7 +77,7 @@ class Result extends React.Component {
         }
     }
 
-    anxietyCompare = (score) => {
+    stressCompare = (score) => {
         if (this.props.malay) {
             if (score>0 && score<=7) {
                 return <b>Normal</b>
