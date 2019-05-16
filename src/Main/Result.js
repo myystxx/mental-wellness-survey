@@ -182,8 +182,8 @@ class Result extends React.Component {
     sendMessage = () => {
         if (this.state.text !== "" && this.state.email !== "") {
             this.setState({msg_sent: true})
-            // axios.get('https://joni-author-api.herokuapp.com/thoughtfull-msg', {
-                axios.get('http://localhost:3001/thoughtfull-msg', {
+            axios.get('https://joni-author-api.herokuapp.com/thoughtfull-msg', {
+                // axios.get('http://localhost:3001/thoughtfull-msg', {
                     params: {
                         text: this.state.text,
                         email: this.state.email
